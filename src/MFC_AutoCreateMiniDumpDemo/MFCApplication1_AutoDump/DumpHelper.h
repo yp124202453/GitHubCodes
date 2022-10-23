@@ -5,7 +5,7 @@
 #include <mutex>
 #include <intsafe.h>
 
-extern VOID CreateDump(struct _EXCEPTION_POINTERS* pExceptionPointers);
+//VOID CreateDump(struct _EXCEPTION_POINTERS* pExceptionPointers);
 
 extern LONG WINAPI DumpCallback(_EXCEPTION_POINTERS* excp);
 

@@ -15,6 +15,8 @@
 #define new DEBUG_NEW
 #endif
 
+//禁用内联 or 关闭内联
+#pragma inline_depth(0)
 
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框
 
