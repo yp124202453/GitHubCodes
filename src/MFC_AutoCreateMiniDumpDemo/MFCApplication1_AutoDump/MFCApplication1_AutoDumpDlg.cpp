@@ -9,6 +9,7 @@
 #include "afxdialogex.h"
 
 #include "DumpHelper.h"
+#include "CommonHelper.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -169,7 +170,11 @@ int CMFCApplication1AutoDumpDlg::Total(const vector<int>& vct)
 	int sum = 0;
 	for (int i = 0; i <= vct.size(); ++i)
 	{
-		sum += vct[i];
+		//注 operator[] 在 debug 下 进行 下标异常检测
+		//注 operator[] 在 release 下 不进行 下标异常检测 即 虽然下标异常仍然能够进行索引取值，显然：计算的结果没有保障了
+		//用 at 方法在 debug release 下 都进行下标异常检测，虽然安全，但性能又受影响，矛盾，解决办法 用 迭代器进行遍历
+		//这块是 演示在 debug ， release 模式下要 抛出 异常。所以必须用 at 方法
+		sum += vct.at(i);
 	}
 
 	return sum;
@@ -177,10 +182,34 @@ int CMFCApplication1AutoDumpDlg::Total(const vector<int>& vct)
 
 void CMFCApplication1AutoDumpDlg::OnBnClickedButtonTestdump()
 {
+#pragma region "测试查找所有的子文件夹相关代码"
+
+	/*CString strPathEx(__wargv[0]);
+	CStringA strPathA(strPathEx.GetBuffer());
+
+	string strPath(strPathA.GetBuffer());
+	size_t iIndex = strPath.find_last_of('\\');
+	if (iIndex == string::npos)
+	{
+		MessageBox(_T("exe path error"));
+		return;
+	}
+
+	strPath = strPath.substr(0, iIndex);
+
+	vector<string> vctDirs;
+	CommonHelper::GetAllDirecories(strPath, vctDirs, true);
+	return;*/
+
+#pragma endregion
+
+#pragma region "触发 vector 索引超边界异常 测试 生成 dump 文件"
+
+	//注意要在 程序运行模式时， 弹出错误，点击重试后，即可生成 dump 文件
 	vector<int> vct(11, 0);
 	for (int i = 0; i < 11; ++i)
 	{
-		vct[i] = i;
+		vct.at(i) = i;
 	}
 
 	int sum = Total(vct);
@@ -188,4 +217,6 @@ void CMFCApplication1AutoDumpDlg::OnBnClickedButtonTestdump()
 	CString str;
 	str.Format(_T("sum = %d"), sum);
 	MessageBox(str);
+
+#pragma endregion
 }

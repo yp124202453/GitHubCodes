@@ -36,6 +36,9 @@
     <ClInclude Include="DumpHelper.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CommonHelper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MFCApplication1_AutoDump.cpp">
@@ -48,6 +51,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="DumpHelper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonHelper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
