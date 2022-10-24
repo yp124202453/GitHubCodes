@@ -8,7 +8,7 @@
 #include "MFCApplication1_AutoDumpDlg.h"
 #include "afxdialogex.h"
 
-#include "DumpHelper.h"
+#include "../MyHelperEx/DumpHelper.h"
 #include "CommonHelper.h"
 
 #ifdef _DEBUG
@@ -60,7 +60,7 @@ CMFCApplication1AutoDumpDlg::CMFCApplication1AutoDumpDlg(CWnd* pParent /*=nullpt
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 
-	SetUnhandledExceptionFilter(DumpCallback);
+	SetUnhandledExceptionFilterEx();
 }
 
 void CMFCApplication1AutoDumpDlg::DoDataExchange(CDataExchange* pDX)

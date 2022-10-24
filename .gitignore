@@ -46,3 +46,6 @@ Bin
 Debug
 obj
 x64
+*.user
+*.user
+*.user
