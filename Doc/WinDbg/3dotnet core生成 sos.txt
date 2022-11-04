@@ -1,0 +1,47 @@
+1
+https://github.com/dotnet/diagnostics
+
+2
+http://t.zoukankan.com/lindexi-p-15120503.html
+
+3
+https://www.nuget.org/packages/dotnet-sos#release-body-tab
+
+找以下命令 后面的版本经常更新 需要定期 查看下
+dotnet tool install --global dotnet-sos --version 6.0.351802
+
+执行命令
+D:\ProcDump>dotnet tool install --global dotnet-sos --version 6.0.351802
+可使用以下命令调用工具: dotnet-sos
+已成功安装工具“dotnet-sos”(版本“6.0.351802”)。
+
+4
+安装 sos
+
+dotnet sos install
+
+D:\ProcDump>dotnet sos install
+Installing SOS to C:\Users\admin\.dotnet\sos
+Creating installation directory...
+Copying files from C:\Users\admin\.dotnet\tools\.store\dotnet-sos\6.0.351802\dotnet-sos\6.0.351802\tools\netcoreapp3.1\any\win-x64
+Copying files from C:\Users\admin\.dotnet\tools\.store\dotnet-sos\6.0.351802\dotnet-sos\6.0.351802\tools\netcoreapp3.1\any\lib
+Execute '.load C:\Users\admin\.dotnet\sos\sos.dll' to load SOS in your Windows debugger.
+SOS install succeeded
+
+D:\ProcDump>
+
+
+5
+加载 sos
+.load C:\Users\admin\.dotnet\sos\sos.dll
+
+6
+打断点
+非托管
+bp module!class.Method
+bp module!Method
+
+托管
+!bpmd module!namespace.class.Method
+!bpmd -md md
+
