@@ -1,7 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-	  "D:/GitHubCodes/src/WpfApp1_TestProbing/WpfApp1_TestProbing/bin/Release/netcoreapp3.1/Lib"
-    ]
-  }
-}
