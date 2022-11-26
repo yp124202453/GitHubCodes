@@ -1,0 +1,6 @@
+{
+  "additionalProbingPaths": [
+    "./Lib/",
+    "./Common/"
+  ]
+}

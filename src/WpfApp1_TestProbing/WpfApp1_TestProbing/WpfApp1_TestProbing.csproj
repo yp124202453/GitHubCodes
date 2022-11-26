@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<UserRuntimeConfig>runtimeconfig.template.json</UserRuntimeConfig>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="WpfLibrary1_File">
+			<HintPath>..\..\WpfLibrary1_Math\WpfLibrary1_File\bin\Release\netcoreapp3.1\WpfLibrary1_File.dll</HintPath>
+		</Reference>
+		<Reference Include="WpfLibrary1_Math">
+			<HintPath>..\..\WpfLibrary1_Math\WpfLibrary1_Math\bin\Release\netcoreapp3.1\WpfLibrary1_Math.dll</HintPath>
+		</Reference>
+
+
+
+	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="$(TargetDir)ModifyConfigApp.exe $(TargetDir)$(TargetName).deps.json" />
+	</Target>
+
+</Project>

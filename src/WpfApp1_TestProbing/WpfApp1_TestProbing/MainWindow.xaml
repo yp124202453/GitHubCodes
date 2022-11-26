@@ -1,0 +1,12 @@
+﻿<Window x:Class="WpfApp1_TestProbing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1_TestProbing"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="300" Width="400">
+    <Grid>
+        <Button Width="200" Height="50" FontSize="30" Click="Button_Click">click me</Button>
+    </Grid>
+</Window>
