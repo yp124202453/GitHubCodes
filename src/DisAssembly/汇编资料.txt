@@ -1,0 +1,41 @@
+1
+pe
+.text code segment
+.rdata 记录着程序调用的 api 接口
+.data data segment
+.
+
+2
+通过注入远程 调用 函数
+举例
+代码注入器
+
+push 0x00001234 ; 函数入参夺入栈
+Call 0x******** ; 调用函数
+
+代码注入器 开源下载地址
+https://github.com/Heckerji/AsmInjector
+
+3
+Maxm32 环境 搭建
+www.cnblogs.com/lsdb/p/7402955.html
+
+4
+编码快速转换
+https://www.qqxiuzi.cn/bianma/ascii.htm
+
+4.1
+汉字 hex 查看
+http://www.dwenzhao.cn/cal/php/hexhanzi.php
+
+5
+
+代码中有中文时，源代码设置成 gb2312 ,否则 编译出来的程序 中文乱码
+
+汇编
+ml -c -coff hello.asm
+
+链接
+link -subsystem:windows hello.obj
+
+6
