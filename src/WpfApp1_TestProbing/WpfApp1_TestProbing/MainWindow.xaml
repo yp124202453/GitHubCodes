@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1_TestProbing"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="300" Width="400">
+        Title="MainWindow" Height="300" Width="400"
+        Closing="Window_Closing">
     <Grid>
         <Button Width="200" Height="50" FontSize="30" Click="Button_Click">click me</Button>
     </Grid>

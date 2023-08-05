@@ -31,16 +31,21 @@ namespace WpfApp1_TestProbing
             int iy = 200;
             MessageBox.Show(this, $"{ix} + {iy} = {WpfLibrary1_Math.MathEx.Add(ix, iy)}");
 
-            string strFilePath = string.Empty;
-            string strAllText = WpfLibrary1_File.Class1.GetAllText(strFilePath);
-            if (string.IsNullOrEmpty(strAllText))
-            {
-                MessageBox.Show(this, "file is empty or file not exits");
-            }
-            else
-            {
-                MessageBox.Show(this, strAllText);
-            }
+            //string strFilePath = string.Empty;
+            //string strAllText = WpfLibrary1_File.Class1.GetAllText(strFilePath);
+            //if (string.IsNullOrEmpty(strAllText))
+            //{
+            //    MessageBox.Show(this, "file is empty or file not exits");
+            //}
+            //else
+            //{
+            //    MessageBox.Show(this, strAllText);
+            //}
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
