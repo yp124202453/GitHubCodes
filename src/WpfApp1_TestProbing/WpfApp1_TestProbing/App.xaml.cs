@@ -39,8 +39,8 @@ namespace WpfApp1_TestProbing
             base.OnStartup(e);
 
             //this msg box is ok
-            //string dir = Directory.GetCurrentDirectory() + $" parameters: count = {e.Args.Length} {string.Join(" , ", e.Args)}";
-            //MessageBox.Show(dir);
+            string dir = Directory.GetCurrentDirectory() + $" parameters: count = {e.Args.Length} {string.Join(" , ", e.Args)}";
+            MessageBox.Show(dir);
         }
     }
 }
