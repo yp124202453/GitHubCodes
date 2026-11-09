@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="ConApp_UEH_demo/ConApp_UEH_demo.vcxproj" Id="33b2da19-2904-4a05-83c3-b33d565fa8ae" />
+</Solution>
